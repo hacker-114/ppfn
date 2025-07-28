@@ -40,7 +40,7 @@
     <p>
 
     </p>
-    <button id="back" onclick="window.open('/','_self')"><span class="material-symbols-outlined">
+    <button id="back" onclick="window.open('/ppfn-static/','_self')"><span class="material-symbols-outlined">
       arrow_back
       </span></button>
 </body>
@@ -912,7 +912,6 @@ var gamelist = [
     "link": "games/index.html#zombiealienparasites.swf"
   }
 ];
-
 if (!localStorage.getItem('theme')) {
     localStorage.setItem("theme", "1")
  }
@@ -933,17 +932,17 @@ if (!localStorage.getItem('theme')) {
        root.style.setProperty("--font", "black");
        root.style.setProperty("--tile", "rgb(210, 210, 210)");
        document.getElementById("res").innerHTML= "<span id='g' class='material-symbols-outlined'>dark_mode</span>";
-       root.style.setProperty("--res", "rgb(56, 56, 56)");
+       root.style.setProperty("--res", "rgba(11, 11, 11, 1)");
        root.style.setProperty("--themeicon", "white");
        root.style.setProperty("--grid", "rgb(189, 189, 189)");
    }else if (sigma == "dark"){
-       root.style.setProperty("--back", "rgb(26, 26, 26)");
+       root.style.setProperty("--back", "rgba(11, 11, 11, 1)");
        root.style.setProperty("--font", "white");
-       root.style.setProperty("--tile", "rgb(40, 40, 40)");
+       root.style.setProperty("--tile", "rgba(15, 15, 15, 1)");
        document.getElementById("res").innerHTML= "<span id='g' class='material-symbols-outlined'>light_mode</span>";
        root.style.setProperty("--res", "rgb(230, 230, 230)");
        root.style.setProperty("--themeicon", "black");
-       root.style.setProperty("--grid", "rgb(43, 43, 43)");
+       root.style.setProperty("--grid", "rgba(28, 28, 28, 1)");
    }else{
        console.log("Invalid theme var input")
    }
@@ -951,6 +950,9 @@ if (!localStorage.getItem('theme')) {
  var localskib;
  if(localStorage.getItem('theme')=="1"){var localskib = "dark"}else{var localskib = "light"}
  themeToggle(localskib);
+if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", '1');  // Default to dark theme
+}
 var dataArr = {};
 window.dataArr = gamelist.sort((a, b) => a.title.localeCompare(b.title));
 
@@ -1009,12 +1011,12 @@ if (!localStorage.getItem("theme")) {
 </script>
 <style>
     :root{
-    --back: rgb(230, 230, 230);
-    --font: black;
-    --tile: rgb(200, 200, 200);
-    --res: white;
-    --themeicon: white;
-    --grid: rgb(189, 189, 189);
+    --back: rgba(11, 11, 11, 1);
+    --font: white;
+    --tile: rgba(15, 15, 15, 1);
+    --res: rgb(230, 230, 230);
+    --themeicon: black;
+    --grid: rgba(28, 28, 28, 1);
 }
 div{
     border-style: none;
